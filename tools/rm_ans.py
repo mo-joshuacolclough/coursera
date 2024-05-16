@@ -7,7 +7,7 @@ END_PATTERN = "### END CODE HERE ###"
 def main(file):
     new = ""
 
-    with open(file, "r") as fo:
+    with open(file, "r", encoding="utf-8") as fo:
         active = False
 
         for line in fo.readlines():
@@ -18,7 +18,7 @@ def main(file):
                 active = START_PATTERN in line
                 new += line
 
-    with open(file, "w") as fo:
+    with open(file, "w", encoding="utf-8") as fo:
         fo.write(new)
 
 if __name__ == "__main__":
